@@ -11,7 +11,8 @@ For this project, we are focusing on a real-life application of this technology 
 
 ## Review UWB
 
-	 ###History of UWB
+### History of UWB
+
 UWB’s roots trace back to Heinrich Hertz’s 1887 spark-gap experiments, which produced short, broadband electromagnetic pulses — effectively the first UWB transmissions. 
 
  
@@ -26,7 +27,7 @@ A pivotal moment came in the 1990s, when McEwan developed the Micropower Impulse
 
 The turning point for UWB came in 2002, when the U.S. Federal Communications Commission (FCC) authorized unlicensed UWB operation in the 3.1–10.6 GHz band, under strict emission limits to ensure coexistence with other radio systems. This decision opened UWB to non-military use, notably high-speed short-range communications, localization, and radar sensing. 
 
-	###UWB Currently
+### UWB Currently
 Today, UWB represents a convergence of communication and sensing, a concept known as Integrated Sensing and Communication (ISAC). Researchers are exploring UWB for human activity recognition, smart environments, and Internet of Things (IoT) applications, while overcoming challenges like multipath interference, miniaturization, and power optimization. 
 
  
@@ -45,7 +46,7 @@ A USB interface (Micro-USB) for power and programming.
 
 In practical terms, this module allows you to perform WiFi/Bluetooth communications (via ESP32) and use UWB to measure distances (or positions) between devices with relatively high precision (on the order of tens of centimetres indoors).The module is designed as a “tag/anchor” device in a UWB ranging/localisation setup.
 
-	### Key Features
+### Key Features
 
 **Wireless / Processor**
 
@@ -84,7 +85,7 @@ This section compares Ultra-Wideband (UWB) technology with two other widely used
 
 Comparison 
 
-	### GPS
+### GPS
 Global Positioning System (GPS) is a satellite-based navigation system that provides absolute location data using signals from multiple satellites orbiting the Earth. A GPS receiver determines its position by calculating the time-of-flight of radio signals from at least four satellites. 
 
 GPS is highly effective for outdoor positioning because it offers global coverage and can achieve accuracy within 3–10 meters in open environments. It is commonly used in navigation, mapping, and fleet tracking applications. 
@@ -93,7 +94,7 @@ However, GPS performance drops significantly indoors or in areas with obstructio
 
 In summary, GPS provides reliable and precise outdoor tracking but struggles in indoor environments due to signal attenuation and energy consumption. 
 
-	### Bluetooth
+### Bluetooth
 
 Bluetooth Low Energy (BLE) technology is commonly used for short-range communication and indoor positioning. It operates in the 2.4 GHz frequency band and estimates proximity based on the signal strength (RSSI) between devices or beacons. 
 
@@ -103,7 +104,7 @@ Nevertheless, BLE accuracy is affected by interference, device orientation, and 
 
 Overall, Bluetooth is cost-effective, energy-efficient, and functional indoors but offers lower accuracy and range compared to GPS. 
 
-#Getting started with positioning
+# Getting started with positioning
 
 For the three modules we have, two of them have been set as the **tags** and one as the **anchor**.
 (Anchor: Fixed in known location, listening for tags.Tag: Mobile device that sends/receives to/from anchors and calculates/gets distance or location.)
@@ -116,7 +117,7 @@ Programming: We have used Arduino IDE.
 .
 .
 
-#Sources
+# Sources
 
 [1]: https://wiki.makerfabs.com/ESP32_UWB.html?utm_source=chatgpt.com "ESP32 UWB/UWB Pro"
 [2]: https://ca.robotshop.com/products/esp32-uwb-pro?utm_source=chatgpt.com "Makerfabs ESP32 UWB Pro"
