@@ -83,7 +83,6 @@ Bellow is an image of the module.
 
 This section compares Ultra-Wideband (UWB) technology with two other widely used positioning technologies: Global Positioning System (GPS) and Bluetooth Low Energy (BLE). The comparison focuses on accuracy, range, speed, energy efficiency, and suitability for indoor environments. Each technology has distinct strengths and weaknesses depending on the use case. 
 
-Comparison 
 
 ### GPS
 Global Positioning System (GPS) is a satellite-based navigation system that provides absolute location data using signals from multiple satellites orbiting the Earth. A GPS receiver determines its position by calculating the time-of-flight of radio signals from at least four satellites. 
@@ -119,7 +118,7 @@ Programming: We have used Arduino IDE.
 
 # Sources
 
-[1]: https://wiki.makerfabs.com/ESP32_UWB.html?utm_source=chatgpt.com "ESP32 UWB/UWB Pro"
-[2]: https://ca.robotshop.com/products/esp32-uwb-pro?utm_source=chatgpt.com "Makerfabs ESP32 UWB Pro"
-[3]: https://www.tindie.com/products/makerfabs/esp32-uwb-dw3000ultra-wideband/?utm_source=chatgpt.com "ESP32 UWB DW3000(Ultra Wideband)"
+https://wiki.makerfabs.com/ESP32_UWB.html?utm_source=chatgpt.com "ESP32 UWB/UWB Pro"
+https://ca.robotshop.com/products/esp32-uwb-pro?utm_source=chatgpt.com "Makerfabs ESP32 UWB Pro"
+https://www.tindie.com/products/makerfabs/esp32-uwb-dw3000ultra-wideband/?utm_source=chatgpt.com "ESP32 UWB DW3000(Ultra Wideband)"
 
