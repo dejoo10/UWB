@@ -79,10 +79,10 @@ Bellow is an image of the module.
 ### ESP32 UWB (WROVER)
 
 **Fron side**
-![ESP32 UWB Module](./images/esp32-uwb-ultra-wideband.jpg)
+![ESP32 UWB Module](./images/esp32-uwb-front.png)
 
 **Back side**
-![ESP32 UWB Module](./images/esp32_uwb_dw3000.jpg)
+![ESP32 UWB Module](./images/esp32_uwb_back.png)
 
 
 ## Comparison
