@@ -80,9 +80,11 @@ Bellow is an image of the module.
 
 **Fron side**
 ![ESP32 UWB Module](./images/esp32-uwb-front.png)
+<img src="./images/esp32-uwb-front.png" alt="ESP32 UWB Module" width="200" height="100">
 
 **Back side**
-![ESP32 UWB Module](./images/esp32_uwb_back.png)
+![ESP32 UWB Module](./images/esp32-uwb-back.png)
+<img src="./images/esp32-uwb-back.png" alt="ESP32 UWB Module" width="200" height="100">
 
 
 ## Comparison
