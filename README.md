@@ -76,8 +76,12 @@ GPIO and expansion headers for I/O, SPI communication to the UWB chip.
 Bellow is an image of the module.
 
 
-ESP32 UWB (WROVER)
+### ESP32 UWB (WROVER)
+
+**Fron side**
 ![ESP32 UWB Module](./images/esp32-uwb-ultra-wideband.jpg)
+
+**Back side**
 ![ESP32 UWB Module](./images/esp32_uwb_dw3000.jpg)
 
 
