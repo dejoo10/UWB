@@ -75,8 +75,10 @@ GPIO and expansion headers for I/O, SPI communication to the UWB chip.
 
 Bellow is an image of the module.
 
-![ESP32 UWB Module](./esp32-uwb-ultra-wideband.jpg)
-![ESP32 UWB Module](./esp32_uwb_dw3000.jpg)
+
+ESP32 UWB (WROVER)
+![ESP32 UWB Module](./images/esp32-uwb-ultra-wideband.jpg)
+![ESP32 UWB Module](./images/esp32_uwb_dw3000.jpg)
 
 
 ## Comparison
@@ -111,7 +113,19 @@ For the three modules we have, two of them have been set as the **tags** and one
 Power supply: Provide stable 5 V (via USB) to the board
 
 Programming: We have used Arduino IDE.
-.
+
+### Getting Started
+
+To get started, the following need to be done;
+
++ Install board : ESP32 .
++ Rename mf_DW1000.zip to DW1000.zip and install it.
++ Install library : Adafruit_SSD1306
++ Upload the code, select board "ESP32 DEV"
+
+To get started with the identifying the devices, the MAC address of each device need to be known.
+
+
 .
 .
 .
