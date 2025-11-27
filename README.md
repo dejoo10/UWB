@@ -79,11 +79,13 @@ Bellow is an image of the module.
 ### ESP32 UWB (WROVER)
 
 **Fron side**
-![ESP32 UWB Module](./images/esp32-uwb-front.png)
+
+![ESP32 UWB Module](./images/esp32-uwb-frontt.png)
 
 
 **Back side**
-![ESP32 UWB Module](./images/esp32-uwb-back.png)
+
+![ESP32 UWB Module](./images/esp32-uwb-backk.png)
 
 
 ## Comparison
@@ -128,9 +130,37 @@ To get started, the following need to be done;
 + Install library : Adafruit_SSD1306
 + Upload the code, select board "ESP32 DEV"
 
-To get started with the identifying the devices, the MAC address of each device need to be known.
+To get started with the identifying the devices, the MAC address of each device need to be known. Connect the devices to your computer to get the MAC address, 
+then ensure that the devices are added to you home network.
+
+To begin working with the ESP32 microcontroller, the tag and anchors are preloaded with the respective code. 
+Using the Arduino programming interface, we were able to transfer the respective codes to the tags and the 
+anchors ( See Folder 1 ). Figure 3 below shows the Arduino programming interface during the 
+loading of the required code into the tags and the anchors.
+
+The code loaded onto the ESP32 UWB devices for the tag and the anchor firmware is important to define their specific roles 
+and enable proper communication between them in the UWB system. This firmware sets up the low-level UWB radio and 
+SPI interfaces, handles the timing critical measurements of the ToA, and implements protocols for ranging and position 
+calculation. Loading these distinct tag and anchor programs configure each ESP32 UWB module with its specific function. 
+The tag programmed as a mobile device that broadcasts and listens for signals, and the anchors as fixed devices that respond 
+and measure signal round-trip times.
 
 
+**Calculation methods using TOA**
+![TOA calculation](./images/UWB_distanceCalcwithTOA.jpg)
+
+After programming the tag and anchors, it is now time to discover them using the available interface. 
+Using an open-source program available through GitHub we were able to initiate the discovery of the anchors using python 
+program (See appendix for the code). Figure 4 below shows part of the code used for the implementation.
+
+When the tag is connected to the program and the discovery code is initiated, this software interacts with the tag firmware 
+to command it to scan for and identify anchors by exchanging UWB messages. Discovering anchors enables the tag to establish 
+references for calculating distances via ToA Essentially, the initial firmware ensures the hardware operates correctly at the 
+radio protocol level and supports the high-level ranging and localization functions carried out by the controlling 
+scripts on the PC. Figure 5 below shows the discovered indoor position of the devices with accurate distance between the 
+tag and the two anchors. In the display are two anchors (anchor 1781 or anchor 1 and anchor1782 or anchor 2). 
+In the figure, it can be seen that the distance between anchor 1 and tag is 0.62m, and the distance between anchor 2 
+and tag is 0.54m. On the left side of the Figure 5, there are more details of anchors positioning and distance details.
 .
 .
 .
