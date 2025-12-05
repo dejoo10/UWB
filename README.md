@@ -3,36 +3,54 @@
 # ULTRA WIDE BAND (UWB)
 
 ## Project description
-This project report explores the capabilities of Ultra-Wideband (UWB) technology for indoor positioning and secure data transfer between two devices. The main aim is to compare UWB technology with existing technologies with focus on Bluetooth and GPS, investigating how UWB can solve business challenges related to precise indoor location tracking and secure communication. 
+This project explores the capabilities of Ultra-Wideband (UWB) technology for indoor positioning and secure data transfer between two devices. 
+The main aim is to compare UWB technology with existing technologies with focus on Bluetooth and GPS, investigating how UWB can solve business challenges 
+related to precise indoor location tracking and secure communication. 
 
-For an efficient and proper investigation, we are using three **ESP32 UWB modules** for testing purposes. These modules serve as the core hardware for our experimental setup, which then allows us to evaluate UWB’s performance in real-world scenarios. The ESP32 UWB modules combine the processing power of the **ESP32 microcontroller** with **UWB transceivers**, enabling accurate distance measurement and data exchange between devices. Their compact design and integration flexibility make them ideal for prototyping and field testing in dynamic environments
-
+For an efficient and proper investigation, we are using three **ESP32 UWB modules** for testing purposes. 
+These modules serve as the core hardware for our experimental setup, which then allows us to evaluate UWB’s performance in real-world scenarios. 
+The ESP32 UWB modules combine the processing power of the **ESP32 microcontroller** with **UWB transceivers**, enabling accurate distance measurement and 
+data exchange between devices. 
+Their compact design and integration flexibility make them ideal for prototyping and field testing in dynamic environments. 
 For this project, we are focusing on a real-life application of this technology in use for Hockey Sport.
 
 ## Review UWB
 
 ### History of UWB
 
-UWB’s roots trace back to Heinrich Hertz’s 1887 spark-gap experiments, which produced short, broadband electromagnetic pulses — effectively the first UWB transmissions. 
+UWB’s roots trace back to Heinrich Hertz’s 1887 spark-gap experiments, which produced short, broadband electromagnetic pulses — effectively the first 
+UWB transmissions. 
 
  
 
-Interest in short-pulse radio returned in the mid-20th century, particularly for radar and military sensing applications, where large bandwidths offered high range resolution and resistance to jamming. Researchers explored impulse radar and time-domain electromagnetics, leading to early systems that could detect targets through walls and materials. These systems, though primitive, laid the foundation for modern UWB radar and localization technology. 
+Interest in short-pulse radio returned in the mid-20th century, particularly for radar and military sensing applications, 
+where large bandwidths offered high range resolution and resistance to jamming. Researchers explored impulse radar and time-domain electromagnetics, 
+leading to early systems that could detect targets through walls and materials. These systems, though primitive, laid the foundation for modern UWB radar and 
+localization technology. 
 
  
 
-A pivotal moment came in the 1990s, when McEwan developed the Micropower Impulse Radar (MIR) at Lawrence Livermore National Laboratory. MIR used extremely short UWB pulses for motion and range detection while consuming minimal power. Around the same time, improvements in digital signal processing (DSP) and the invention of time-hopping impulse radio (TH-IR) and direct-sequence UWB (DS-UWB) revived UWB research for communications and localization. 
+A pivotal moment came in the 1990s, when McEwan developed the Micropower Impulse Radar (MIR) at Lawrence Livermore National Laboratory. 
+MIR used extremely short UWB pulses for motion and range detection while consuming minimal power. Around the same time, 
+improvements in digital signal processing (DSP) and the invention of time-hopping impulse radio (TH-IR) and direct-sequence UWB (DS-UWB) revived UWB 
+research for communications and localization. 
 
  
 
-The turning point for UWB came in 2002, when the U.S. Federal Communications Commission (FCC) authorized unlicensed UWB operation in the 3.1–10.6 GHz band, under strict emission limits to ensure coexistence with other radio systems. This decision opened UWB to non-military use, notably high-speed short-range communications, localization, and radar sensing. 
+The turning point for UWB came in 2002, when the U.S. Federal Communications Commission (FCC) authorized unlicensed UWB operation in the 3.1–10.6 GHz band, under 
+strict emission limits to ensure coexistence with other radio systems. This decision opened UWB to non-military use, notably high-speed short-range 
+communications, localization, and radar sensing. 
 
 ### UWB Currently
-Today, UWB represents a convergence of communication and sensing, a concept known as Integrated Sensing and Communication (ISAC). Researchers are exploring UWB for human activity recognition, smart environments, and Internet of Things (IoT) applications, while overcoming challenges like multipath interference, miniaturization, and power optimization. 
+Today, UWB represents a convergence of communication and sensing, a concept known as Integrated Sensing and Communication (ISAC). 
+Researchers are exploring UWB for human activity recognition, smart environments, and Internet of Things (IoT) applications, while overcoming challenges like 
+multipath interference, miniaturization, and power optimization. 
 
  
 
-In 2022, imec unveiled an impulse-radio ultra-wideband (IR-UWB) transmitter chip achieving 1.66 Gb/s data rates at under 10 mW power consumption. Built in 28 nm CMOS and just 0.155 mm² in size, it delivers exceptional energy efficiency of about 5.8 pJ/bit, over ten times better than comparable Wi-Fi systems. This innovation combines impulse and phase modulation with a low-jitter oscillator and polar transmitter architecture, pushing UWB performance beyond current IEEE 802.15.4z standards. imec envisions applications in wearables, AR/VR, and biomedical implants, marking a major step toward high-speed, ultra-low-power wireless communication. 
+In 2022, imec unveiled an impulse-radio ultra-wideband (IR-UWB) transmitter chip achieving 1.66 Gb/s data rates at under 10 mW power consumption. Built in 28 nm 
+CMOS and just 0.155 mm² in size, it delivers exceptional energy efficiency of about 5.8 pJ/bit, over ten times better than comparable Wi-Fi systems. 
+This innovation combines impulse and phase modulation with a low-jitter oscillator and polar transmitter architecture, pushing UWB performance beyond current IEEE 802.15.4z standards. imec envisions applications in wearables, AR/VR, and biomedical implants, marking a major step toward high-speed, ultra-low-power wireless communication. 
 
 ## ESP32 UWB
 
@@ -133,7 +151,7 @@ To get started, the following need to be done;
 To get started with the identifying the devices, the MAC address of each device need to be known. Connect the devices to your computer to get the MAC address, 
 then ensure that the devices are added to you home network.
 
-To begin working with the ESP32 microcontroller, the tag and anchors are preloaded with the respective code. 
+To begin working with the ESP32 microcontroller, the tag and anchors are preloaded with the respective code (see the code folder for the respective code). 
 Using the Arduino programming interface, we were able to transfer the respective codes to the tags and the 
 anchors ( See Folder 1 ). Figure 3 below shows the Arduino programming interface during the 
 loading of the required code into the tags and the anchors.
@@ -147,6 +165,7 @@ and measure signal round-trip times.
 
 
 **Calculation methods using TOA**
+
 ![TOA calculation](./images/UWB_distanceCalcwithTOA.jpg)
 
 After programming the tag and anchors, it is now time to discover them using the available interface. 
@@ -157,10 +176,16 @@ When the tag is connected to the program and the discovery code is initiated, th
 to command it to scan for and identify anchors by exchanging UWB messages. Discovering anchors enables the tag to establish 
 references for calculating distances via ToA Essentially, the initial firmware ensures the hardware operates correctly at the 
 radio protocol level and supports the high-level ranging and localization functions carried out by the controlling 
-scripts on the PC. Figure 5 below shows the discovered indoor position of the devices with accurate distance between the 
+scripts on the PC. The igure below shows the discovered indoor position of the devices with accurate distance between the 
 tag and the two anchors. In the display are two anchors (anchor 1781 or anchor 1 and anchor1782 or anchor 2). 
 In the figure, it can be seen that the distance between anchor 1 and tag is 0.62m, and the distance between anchor 2 
 and tag is 0.54m. On the left side of the Figure 5, there are more details of anchors positioning and distance details.
+
+
+
+![positioning screen](./images/UWB_1c.jpg)
+
+**Screen showing calculated distance and position**
 .
 .
 .
