@@ -166,7 +166,7 @@ and measure signal round-trip times.
 
 **Calculation methods using TOA**
 
-![TOA calculation](./images/UWB_distanceCalcwithTOA.png)
+![TOA calculation](./images/UWB_distanceCalcwithTOA.jpg)
 
 After programming the tag and anchors, it is now time to discover them using the available interface. 
 Using an open-source program available through GitHub we were able to initiate the discovery of the anchors using python 
@@ -183,7 +183,7 @@ and tag is 0.54m. On the left side of the Figure 5, there are more details of an
 
 
 
-![positioning screen](./images/UWB_1c.jpg)
+![positioning screen](./images/UWB_1c.png)
 
 **Screen showing calculated distance and position**
 .
