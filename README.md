@@ -31,7 +31,7 @@ For this setup, we utilize **ESP32 UWB modules** acting as **Anchors** (fixed re
 | :--- | :--- | :--- |
 | **ESP32 UWB Module** | Core hardware (DW1000 + ESP32) | 3 (2 Tags, 1 Anchor) |
 | **Micro-USB Cable** | For power and programming | 3 |
-| **Power Source** | Power bank or PC USB port | - |
+| **Power Source** | Power bank or PC USB port | 3 |
 
 > **Note**: We use the standard DW1000 version which offers a typical range of ~45m.
 
@@ -94,7 +94,7 @@ We use a Python script to visualize the position of the tag relative to the anch
     ```bash
     python3 uwb_positioning.py
     ```
-    *(Note: Refer to the Appendix/Code folder for the specific script name)*
+    *(Note: Refer to the Code folder for the specific script name)*
 
 3.  The output will show real-time distance and coordinates.
 
