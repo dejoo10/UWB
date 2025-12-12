@@ -105,9 +105,10 @@ We use a Python script to visualize the position of the tag relative to the anch
 
 ---
 
-## 📊 How It Works: Time-of-Flight (ToF)
+## 📊 How It Works: Time-of-Arrival (ToA)
 
-The system uses **Time-of-Flight (ToF)** to measure distance. The Tag sends a radio pulse, the Anchor receives it and sends a response. The time taken for this round trip is used to calculate distance with high precision ($Speed \times Time = Distance$).
+The system uses **Time-of-Arrival (ToA)** to measure distance. The Tag sends a 
+radio pulse, the Anchor receives it and sends a response. The time taken for this round trip is used to calculate distance with high precision ($Speed \times Time = Distance$).
 
 ![TOA Calculation](./images/UWB_distanceCalcwithTOA.jpg)
 
@@ -122,7 +123,7 @@ In addition to positioning, we experimented with data transfer between two ESP32
 
 <div align="center">
   <img src="./images/UWB_2a.png" alt="Data Transfer Setup" width="50%">
-  <p><em>Figure: Data Transfer Setup</em></p>
+  <p><em>Figure: Data Transfer In Progress</em></p>
 </div>
 
 ### 🚀 Speed & Performance Limitations
@@ -155,5 +156,9 @@ Our implementation uses the **Qorvo DW1000**, which complies with the older **IE
 ## 📚 References & Credits
 
 *   [Makerfabs ESP32 UWB Wiki](https://wiki.makerfabs.com/ESP32_UWB.html)
-*   [RobotShop Product Page](https://ca.robotshop.com/products/esp32-uwb-pro)
+*   [RobotShop Product Page](https://ca.robotshop.com/products/esp32-uwb-pro))
+*   [Qorvo, “Qorvo DW3000 Transceivers](https://www.mouser.fi/new/qorvo/qorvo-dw3000-transceivers
+*   [Qorvo, "Getting Back to basics with Ultra-Wideband](https://www.qorvo.com/resources/d/qorvo-gettingback-
+to-basics-with-ultra-wideband-uwb-white-paper.)
+*   [Qorvo, "Qorvo, "DW1000"](https://www.qorvo.com/products/p/DW1000.)
 *   Based on original research and implementations from Makerfabs GitHub.
