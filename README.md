@@ -1,198 +1,128 @@
+# ESP32 Ultra-Wideband (UWB) Testing
 
+![Platform](https://img.shields.io/badge/Platform-ESP32-blue?style=for-the-badge&logo=espressif)
+![Language](https://img.shields.io/badge/Language-C%2B%2B-red?style=for-the-badge&logo=c%2B%2B)
+![Status](https://img.shields.io/badge/Status-Active-green?style=for-the-badge)
 
-# ULTRA WIDE BAND (UWB)
+<div align="center">
+  <img src="./images/UWB%20top%20image.jpeg" alt="UWB Setup" width="100%">
+</div>
 
-## Project description
-This project explores the capabilities of Ultra-Wideband (UWB) technology for indoor positioning and secure data transfer between two devices. 
-The main aim is to compare UWB technology with existing technologies with focus on Bluetooth and GPS, investigating how UWB can solve business challenges 
-related to precise indoor location tracking and secure communication. 
+---
 
-For an efficient and proper investigation, we are using three **ESP32 UWB modules** for testing purposes. 
-These modules serve as the core hardware for our experimental setup, which then allows us to evaluate UWB’s performance in real-world scenarios. 
-The ESP32 UWB modules combine the processing power of the **ESP32 microcontroller** with **UWB transceivers**, enabling accurate distance measurement and 
-data exchange between devices. 
-Their compact design and integration flexibility make them ideal for prototyping and field testing in dynamic environments. 
-For this project, we are focusing on a real-life application of this technology in use for Hockey Sport.
+## 📖 About This Project
 
-## Review UWB
+This project explores the capabilities of **Ultra-Wideband (UWB)** technology for precise indoor positioning and secure data transfer. The primary goal is to investigate UWB's performance in real-world scenarios, specifically focusing on applications for **Hockey Sport**.
 
-### History of UWB
+We compare UWB with existing technologies like **Bluetooth (BLE)** and **GPS**, highlighting its superiority in indoor accuracy and resistance to interference.
 
-UWB’s roots trace back to Heinrich Hertz’s 1887 spark-gap experiments, which produced short, broadband electromagnetic pulses — effectively the first 
-UWB transmissions. 
+### 🌟 Key Features
+*   **High Precision**: ±10 cm indoor accuracy using Time-of-Flight (ToF).
+*   **Low Power**: Efficient communication suitable for battery-operated tags.
+*   **Dual Functionality**: Combines ESP32's WiFi/BLE with Decawave's UWB capabilities.
 
- 
+---
 
-Interest in short-pulse radio returned in the mid-20th century, particularly for radar and military sensing applications, 
-where large bandwidths offered high range resolution and resistance to jamming. Researchers explored impulse radar and time-domain electromagnetics, 
-leading to early systems that could detect targets through walls and materials. These systems, though primitive, laid the foundation for modern UWB radar and 
-localization technology. 
+## 🛠️ Hardware Requirements
 
- 
+For this setup, we utilize **ESP32 UWB modules** acting as **Anchors** (fixed reference points) and **Tags** (mobile devices to be tracked).
 
-A pivotal moment came in the 1990s, when McEwan developed the Micropower Impulse Radar (MIR) at Lawrence Livermore National Laboratory. 
-MIR used extremely short UWB pulses for motion and range detection while consuming minimal power. Around the same time, 
-improvements in digital signal processing (DSP) and the invention of time-hopping impulse radio (TH-IR) and direct-sequence UWB (DS-UWB) revived UWB 
-research for communications and localization. 
+| Component | Description | Quantity |
+| :--- | :--- | :--- |
+| **ESP32 UWB Module** | Core hardware (DW1000 + ESP32) | 3 (2 Tags, 1 Anchor) |
+| **Micro-USB Cable** | For power and programming | 3 |
+| **Power Source** | Power bank or PC USB port | - |
 
- 
+> **Note**: We use the standard DW1000 version which offers a typical range of ~45m.
 
-The turning point for UWB came in 2002, when the U.S. Federal Communications Commission (FCC) authorized unlicensed UWB operation in the 3.1–10.6 GHz band, under 
-strict emission limits to ensure coexistence with other radio systems. This decision opened UWB to non-military use, notably high-speed short-range 
-communications, localization, and radar sensing. 
+<div align="center">
+  <img src="./images/esp32-uwb-frontt.png" alt="ESP32 UWB Front" width="45%">
+  <img src="./images/esp32-uwb-backk.png" alt="ESP32 UWB Back" width="45%">
+</div>
 
-### UWB Currently
-Today, UWB represents a convergence of communication and sensing, a concept known as Integrated Sensing and Communication (ISAC). 
-Researchers are exploring UWB for human activity recognition, smart environments, and Internet of Things (IoT) applications, while overcoming challenges like 
-multipath interference, miniaturization, and power optimization. 
+---
 
- 
+## 💻 Software Requirements
 
-In 2022, imec unveiled an impulse-radio ultra-wideband (IR-UWB) transmitter chip achieving 1.66 Gb/s data rates at under 10 mW power consumption. Built in 28 nm 
-CMOS and just 0.155 mm² in size, it delivers exceptional energy efficiency of about 5.8 pJ/bit, over ten times better than comparable Wi-Fi systems. 
-This innovation combines impulse and phase modulation with a low-jitter oscillator and polar transmitter architecture, pushing UWB performance beyond current IEEE 802.15.4z standards. imec envisions applications in wearables, AR/VR, and biomedical implants, marking a major step toward high-speed, ultra-low-power wireless communication. 
+To replicate this project, you will need the following software and libraries:
 
-## ESP32 UWB
+*   **Arduino IDE**: For programming the ESP32 modules.
+*   **Board Support**: `ESP32 Dev Module` installed in Arduino IDE.
+*   **Libraries**:
+    *   `DW1000` (Based on Makerfabs library)
+    *   `Adafruit_SSD1306` (For OLED display support)
+*   **Python 3**: For running the visualization script on a PC.
 
-The ESP32 UWB module integrates:
+---
 
-An ESP32 (WiFi + Bluetooth) microcontroller module (WROOM or WROVER)
+## 🚀 Getting Started
 
-A UWB transceiver (typically the Decawave/Qorvo DW1000 chip) for ultra-wideband ranging (time-of‐flight based)
+Follow these steps to set up your indoor positioning system.
 
-A USB interface (Micro-USB) for power and programming.
+### Step 1: Install Dependencies
+1.  Download and install the [Arduino IDE](https://www.arduino.cc/en/software).
+2.  In Arduino IDE, go to **Tools > Board > Boards Manager** and install the **ESP32** package.
+3.  Install the `Adafruit_SSD1306` library via the Library Manager.
+4.  Download the `DW1000.zip` library (rename `mf_DW1000.zip` if necessary) and add it via **Sketch > Include Library > Add .ZIP Library**.
 
-In practical terms, this module allows you to perform WiFi/Bluetooth communications (via ESP32) and use UWB to measure distances (or positions) between devices with relatively high precision (on the order of tens of centimetres indoors).The module is designed as a “tag/anchor” device in a UWB ranging/localisation setup.
+### Step 2: Flash the Firmware
+You need to flash different code for **Anchors** and **Tags**.
 
-### Key Features
+**For Anchors:**
+1.  Open `Code/Anchor/anchor_code.ino` (verify path in repo).
+2.  Select board: **ESP32 Dev Module**.
+3.  Connect the Anchor ESP32 to your PC.
+4.  Upload the sketch.
 
-**Wireless / Processor**
+**For Tags:**
+1.  Open `Code/Tag/tag_code.ino` (verify path in repo).
+2.  Select board: **ESP32 Dev Module**.
+3.  Connect the Tag ESP32 to your PC.
+4.  Upload the sketch.
 
-ESP32 microcontroller (dual-core Xtensa LX6) with WiFi (2.4 GHz) + Bluetooth (BLE) — inherited from the ESP32 module.
-UWB transceiver: DW1000 (for the “basic” version) – an IEEE 802.15.4-2011 UWB compliant chip: data rate up to 6.8 Mbps; indoor range up to ~300 m under ideal conditions.
+### Step 3: Device Discovery & Network
+1.  Connect devices to your computer to identify their MAC addresses.
+2.  Ensure devices are added to your home network if using WiFi features.
+3.  Power up all Anchors in their fixed locations.
+4.  Power up the Tag.
 
-**Ranging / Positioning**
+### Step 4: Run Visualization
+We use a Python script to visualize the position of the tag relative to the anchors.
 
-Time-of-Flight (ToF) ranging between devices (“tags” and “anchors”). 
-Indoor accuracy: about ±10 cm typical resolution (when properly calibrated) in research setups using ESP32+UWB boards.
+1.  Navigate to the directory containing the Python script.
+2.  Run the script:
+    ```bash
+    python3 uwb_positioning.py
+    ```
+    *(Note: Refer to the Appendix/Code folder for the specific script name)*
 
-**Power & connectivity**
+3.  The output will show real-time distance and coordinates.
 
-USB Micro-USB connector, board supply voltage: ~4.8 V to 5.5 V (typical 5 V) for the board.
-Standard ESP32 module running at 3.3 V internally; UWB chip supply/antenna must be appropriately decoupled/engineered.
-GPIO and expansion headers for I/O, SPI communication to the UWB chip.
+<div align="center">
+  <img src="./images/UWB_1c.png" alt="Positioning Screen" width="80%">
+  <p><em>Figure: Real-time positioning visualization</em></p>
+</div>
 
-**Important variant comparisons**
+---
 
-| Variant              | UWB core           | Max range (approx)                                                  | Additional features                                |
-| -------------------- | ------------------ | ------------------------------------------------------------------- | -------------------------------------------------- |
-| UWB Basic            | DW1000             | ~45 m typical (cited)                         | Standard version                                   |
-| UWB Pro (High Power) | DW1000 + amplifier | ~200 m (outdoor/line-of-sight)             | Longer range, same DW1000 core                     |
-| UWB DW3000           | DW3000             | Additional channels (5 &9), Apple U1 interoperability | Next-gen UWB, lower power, broader channel support |
+## 📊 How It Works: Time-of-Flight (ToF)
 
+The system uses **Time-of-Flight (ToF)** to measure distance. The Tag sends a radio pulse, the Anchor receives it and sends a response. The time taken for this round trip is used to calculate distance with high precision ($Speed \times Time = Distance$).
 
-Bellow is an image of the module.
+![TOA Calculation](./images/UWB_distanceCalcwithTOA.jpg)
 
+---
 
-### ESP32 UWB (WROVER)
+## 👥 Authors
 
-**Fron side**
+*   **Adedeji Babalola**
+*   **Dmitri Oikarinen**
+*   **Vali Maleki**
 
-![ESP32 UWB Module](./images/esp32-uwb-frontt.png)
+---
 
+## 📚 References & Credits
 
-**Back side**
-
-![ESP32 UWB Module](./images/esp32-uwb-backk.png)
-
-
-## Comparison
-
-This section compares Ultra-Wideband (UWB) technology with two other widely used positioning technologies: Global Positioning System (GPS) and Bluetooth Low Energy (BLE). The comparison focuses on accuracy, range, speed, energy efficiency, and suitability for indoor environments. Each technology has distinct strengths and weaknesses depending on the use case. 
-
-
-### GPS
-Global Positioning System (GPS) is a satellite-based navigation system that provides absolute location data using signals from multiple satellites orbiting the Earth. A GPS receiver determines its position by calculating the time-of-flight of radio signals from at least four satellites. 
-
-GPS is highly effective for outdoor positioning because it offers global coverage and can achieve accuracy within 3–10 meters in open environments. It is commonly used in navigation, mapping, and fleet tracking applications. 
-
-However, GPS performance drops significantly indoors or in areas with obstructions such as buildings or tunnels because satellite signals are weakened or blocked. It also consumes relatively high power, which makes it less suitable for battery-powered indoor tracking devices. Furthermore, GPS modules often have longer acquisition times (cold start) and require continuous connectivity to satellites, adding latency and energy costs. 
-
-In summary, GPS provides reliable and precise outdoor tracking but struggles in indoor environments due to signal attenuation and energy consumption. 
-
-### Bluetooth
-
-Bluetooth Low Energy (BLE) technology is commonly used for short-range communication and indoor positioning. It operates in the 2.4 GHz frequency band and estimates proximity based on the signal strength (RSSI) between devices or beacons. 
-
-BLE is well-suited for indoor environments because it does not rely on satellite visibility. It consumes very little power, making it ideal for smartphones, wearables, and IoT devices. BLE positioning systems can reach an accuracy of around 1–5 meters, depending on beacon density and environmental conditions. 
-
-Nevertheless, BLE accuracy is affected by interference, device orientation, and obstacles such as walls or human bodies. It provides only relative position or proximity rather than precise coordinates. The range is also limited—typically between 10 and 50 meters depending on power level and antenna design. 
-
-Overall, Bluetooth is cost-effective, energy-efficient, and functional indoors but offers lower accuracy and range compared to GPS. 
-
-# Getting started with positioning
-
-For the three modules we have, two of them have been set as the **tags** and one as the **anchor**.
-(Anchor: Fixed in known location, listening for tags.Tag: Mobile device that sends/receives to/from anchors and calculates/gets distance or location.)
-
-Power supply: Provide stable 5 V (via USB) to the board
-
-Programming: We have used Arduino IDE.
-
-### Getting Started
-
-To get started, the following need to be done;
-
-+ Install board : ESP32 .
-+ Rename mf_DW1000.zip to DW1000.zip and install it.
-+ Install library : Adafruit_SSD1306
-+ Upload the code, select board "ESP32 DEV"
-
-To get started with the identifying the devices, the MAC address of each device need to be known. Connect the devices to your computer to get the MAC address, 
-then ensure that the devices are added to you home network.
-
-To begin working with the ESP32 microcontroller, the tag and anchors are preloaded with the respective code (see the code folder for the respective code). 
-Using the Arduino programming interface, we were able to transfer the respective codes to the tags and the 
-anchors ( See Folder 1 ). Figure 3 below shows the Arduino programming interface during the 
-loading of the required code into the tags and the anchors.
-
-The code loaded onto the ESP32 UWB devices for the tag and the anchor firmware is important to define their specific roles 
-and enable proper communication between them in the UWB system. This firmware sets up the low-level UWB radio and 
-SPI interfaces, handles the timing critical measurements of the ToA, and implements protocols for ranging and position 
-calculation. Loading these distinct tag and anchor programs configure each ESP32 UWB module with its specific function. 
-The tag programmed as a mobile device that broadcasts and listens for signals, and the anchors as fixed devices that respond 
-and measure signal round-trip times.
-
-
-**Calculation methods using TOA**
-
-![TOA calculation](./images/UWB_distanceCalcwithTOA.jpg)
-
-After programming the tag and anchors, it is now time to discover them using the available interface. 
-Using an open-source program available through GitHub we were able to initiate the discovery of the anchors using python 
-program (See appendix for the code). Figure 4 below shows part of the code used for the implementation.
-
-When the tag is connected to the program and the discovery code is initiated, this software interacts with the tag firmware 
-to command it to scan for and identify anchors by exchanging UWB messages. Discovering anchors enables the tag to establish 
-references for calculating distances via ToA Essentially, the initial firmware ensures the hardware operates correctly at the 
-radio protocol level and supports the high-level ranging and localization functions carried out by the controlling 
-scripts on the PC. The igure below shows the discovered indoor position of the devices with accurate distance between the 
-tag and the two anchors. In the display are two anchors (anchor 1781 or anchor 1 and anchor1782 or anchor 2). 
-In the figure, it can be seen that the distance between anchor 1 and tag is 0.62m, and the distance between anchor 2 
-and tag is 0.54m. On the left side of the Figure 5, there are more details of anchors positioning and distance details.
-
-
-
-![positioning screen](./images/UWB_1c.png)
-
-**Screen showing calculated distance and position**
-.
-.
-.
-
-# Sources
-
-https://wiki.makerfabs.com/ESP32_UWB.html?utm_source=chatgpt.com "ESP32 UWB/UWB Pro"
-https://ca.robotshop.com/products/esp32-uwb-pro?utm_source=chatgpt.com "Makerfabs ESP32 UWB Pro"
-https://www.tindie.com/products/makerfabs/esp32-uwb-dw3000ultra-wideband/?utm_source=chatgpt.com "ESP32 UWB DW3000(Ultra Wideband)"
-
+*   [Makerfabs ESP32 UWB Wiki](https://wiki.makerfabs.com/ESP32_UWB.html)
+*   [RobotShop Product Page](https://ca.robotshop.com/products/esp32-uwb-pro)
+*   Based on original research and implementations from Makerfabs GitHub.
