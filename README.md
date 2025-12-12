@@ -113,6 +113,37 @@ The system uses **Time-of-Flight (ToF)** to measure distance. The Tag sends a ra
 
 ---
 
+
+---
+
+## 📡 Data Transfer Testing
+
+In addition to positioning, we experimented with data transfer between two ESP32 UWB devices. One device acted as a **Transmitter**, and the other as a **Receiver**.
+
+<div align="center">
+  <img src="./images/UWB_2a.png" alt="Data Transfer Setup" width="50%">
+  <p><em>Figure: Data Transfer Setup</em></p>
+</div>
+
+### 🚀 Speed & Performance Limitations
+
+The Qorvo DW1000 chip supports a maximum theoretical data rate of **6.8 Mbps** (based on IEEE 802.15.4a). However, achieving this in real-world scenarios is challenging due to:
+1.  **Protocol Limitations**: The fundamental overhead of PHY and MAC headers reduces actual application throughput.
+2.  **Packet Size**: The maximum packet length is **1023 bytes**. While larger packets improve throughput, they increase latency and error susceptibility in noisy environments.
+3.  **Duty Cycle**: The chip is optimized for short bursts (localization) rather than sustained bulk data transfer.
+4.  **Environmental Factors**: While UWB is robust against multipath fading, signal blockage and interference still impact range and effective throughput.
+
+**Recommendation**: For reliable operation, use the 6.8 Mbps mode for short-range, interference-free conditions. For larger files, maximizing packet size (up to 1023 bytes) can help, but error control mechanisms are essential.
+
+### 🔒 Security Considerations
+
+Our implementation uses the **Qorvo DW1000**, which complies with the older **IEEE 802.15.4a** standard.
+*   **Limitation**: It lacks native support for the **Scrambled Timestamp Sequence (STS)** field introduced in the newer **IEEE 802.15.4z** standard.
+*   **Implication**: Without STS, the system is more vulnerable to physical-layer attacks (like distance reduction attacks) compared to modern chips like the DW3000.
+*   **Modern Alternatives**: Newer chips (e.g., DW3000) use AES-128 encryption to generate pseudo-random sequences (STS), ensuring that only devices with the shared key can perform valid ranging, effectively preventing standard relay or replay attacks.
+
+---
+
 ## 👥 Authors
 
 *   **Adedeji Babalola**
