@@ -14,6 +14,20 @@
 
 This project explores the capabilities of **Ultra-Wideband (UWB)** technology for precise indoor positioning and secure data transfer. The primary goal is to investigate UWB's performance in real-world scenarios, specifically focusing on applications for **Hockey Sport**.
 
+### What is Ultra-Wideband
+
+Ultra-Wideband (UWB) is a wireless communication technology that uses a very wide frequency spectrum to transmit data over short distances with extremely high accuracy and low power consumption. Unlike traditional wireless technologies such as Wi-Fi or Bluetooth, UWB is specially designed for precise distance measurement and real-time location tracking, making it highly suitable for positioning and sensing applications.
+
+UWB technology works by sending very short radio pulses across a broad range of frequencies. This enables devices to determine location and distance with centimeter-level accuracy. Due to its precision and reliability, UWB is widely used in applications such as indoor navigation, asset tracking, smart access systems, industrial automation, robotics, and Internet of Things (IoT) environments. Modern smartphones, smart tags, and automotive systems increasingly integrate UWB to support secure and accurate spatial awareness functionalities.
+
+Figure below illustrates the frequency spectrum coverage of Ultra-Wideband (UWB) technology compared with other wireless communication technologies such as GPS, PCS, Wi-Fi, WiMAX, WLAN, and Satellite communication. Unlike conventional wireless systems that operate within narrow frequency bands, UWB utilizes a significantly wider frequency range, extending approximately from 3.1 GHz to 10.6 GHz.
+
+The figure also highlights the Federal Communications Commission (FCC) power spectral density limit of −41 dBm/MHz, which allows UWB systems to coexist with other wireless technologies while minimizing interference.
+
+<div align="center">
+  <img src="./images/uwb_image_3a.jpeg" alt="UWB frequency spectrum coverage" width="100%">
+</div>
+
 We compare UWB with existing technologies like **Bluetooth (BLE)** and **GPS**, highlighting its superiority in indoor accuracy and resistance to interference.
 
 ### 🌟 Key Features
