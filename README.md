@@ -25,7 +25,8 @@ The figure below illustrates the frequency spectrum coverage of Ultra-Wideband (
 The figure also highlights the Federal Communications Commission (FCC) power spectral density limit of −41 dBm/MHz, which allows UWB systems to coexist with other wireless technologies while minimizing interference.
 
 <div align="center">
-  <img src="./images/uwb_image_3a.jpg" alt="UWB frequency spectrum coverage" width="100%">
+  <img src="./images/uwb_image_3a.jpg" alt="UWB frequency spectrum coverage" width="80%">
+  <p><em>Figure: UWB frequency spectrum coverage</em></p>
 </div>
 
 We compare UWB with existing technologies like **Bluetooth (BLE)** and **GPS**, highlighting its superiority in indoor accuracy and resistance to interference.
@@ -52,6 +53,7 @@ For this setup, we utilize **ESP32 UWB modules** acting as **Anchors** (fixed re
 <div align="center">
   <img src="./images/esp32-uwb-frontt.png" alt="ESP32 UWB Front" width="45%">
   <img src="./images/esp32-uwb-backk.png" alt="ESP32 UWB Back" width="45%">
+  <p><em>Figure: Front and Backside view of the ESP32 UWB Module</em></p>
 </div>
 
 ---
@@ -124,7 +126,10 @@ We use a Python script to visualize the position of the tag relative to the anch
 The system uses **Time-of-Arrival (ToA)** to measure distance. The Tag sends a 
 radio pulse, the Anchor receives it and sends a response. The time taken for this round trip is used to calculate distance with high precision ($Speed \times Time = Distance$).
 
-![TOA Calculation](./images/UWB_distanceCalcwithTOA.jpg)
+<div align="center">
+  <img src="./images/UWB_distanceCalcwithTOA.jpg" alt="ToA Distance Estimation" width="50%">
+  <p><em>Figure: Distance Estimation</em></p>
+</div>
 
 ---
 
@@ -172,8 +177,8 @@ Our implementation uses the **Qorvo DW1000**, which complies with the older **IE
 
 *   [Makerfabs ESP32 UWB Wiki](https://wiki.makerfabs.com/ESP32_UWB.html)
 *   [RobotShop Product Page](https://ca.robotshop.com/products/esp32-uwb-pro))
-*   [Qorvo, “Qorvo DW3000 Transceivers](https://www.mouser.fi/new/qorvo/qorvo-dw3000-transceivers
-*   [Qorvo, "Getting Back to basics with Ultra-Wideband](https://www.qorvo.com/resources/d/qorvo-gettingback-
-to-basics-with-ultra-wideband-uwb-white-paper.)
+*   [Qorvo, “Qorvo DW3000 Transceivers](https://www.mouser.fi/new/qorvo/qorvo-dw3000-transceivers)
+*   [Qorvo, "Getting Back to basics with Ultra-Wideband](https://www.qorvo.com/resources/d/qorvo-gettingback-to-basics-with-ultra-wideband-uwb-white-paper)
 *   [Qorvo, "Qorvo, "DW1000"](https://www.qorvo.com/products/p/DW1000.)
+*   [SII, "Ultra-wideband – old technology discovered again. Vol. 1 – UWB potential](https://sii.pl/blog/en/ultra-wideband-old-technology-discovered-again-vol-1-uwb-potential/)
 *   Based on original research and implementations from Makerfabs GitHub.
