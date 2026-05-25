@@ -26,8 +26,10 @@ The figure also highlights the Federal Communications Commission (FCC) power spe
 
 <div align="center">
   <img src="./images/uwb_image_3a.jpg" alt="UWB frequency spectrum coverage" width="80%">
-  <p><em>Figure: UWB frequency spectrum coverage</em></p>
+  <p><em>Figure 1: UWB frequency spectrum coverage</em></p>
 </div>
+
+### Aim
 
 We compare UWB with existing technologies like **Bluetooth (BLE)** and **GPS**, highlighting its superiority in indoor accuracy and resistance to interference.
 
@@ -53,7 +55,7 @@ For this setup, we utilize **ESP32 UWB modules** acting as **Anchors** (fixed re
 <div align="center">
   <img src="./images/esp32-uwb-frontt.png" alt="ESP32 UWB Front" width="45%">
   <img src="./images/esp32-uwb-backk.png" alt="ESP32 UWB Back" width="45%">
-  <p><em>Figure: Front and Backside view of the ESP32 UWB Module</em></p>
+  <p><em>Figure 2: Front and Backside view of the ESP32 UWB Module</em></p>
 </div>
 
 ---
@@ -116,7 +118,7 @@ We use a Python script to visualize the position of the tag relative to the anch
 
 <div align="center">
   <img src="./images/UWB_1c.png" alt="Positioning Screen" width="80%">
-  <p><em>Figure: Real-time positioning visualization</em></p>
+  <p><em>Figure 3: Real-time positioning visualization</em></p>
 </div>
 
 ---
@@ -128,7 +130,7 @@ radio pulse, the Anchor receives it and sends a response. The time taken for thi
 
 <div align="center">
   <img src="./images/UWB_distanceCalcwithTOA.jpg" alt="ToA Distance Estimation" width="50%">
-  <p><em>Figure: Distance Estimation</em></p>
+  <p><em>Figure 4: Distance Estimation</em></p>
 </div>
 
 ---
@@ -142,7 +144,7 @@ In addition to positioning, we experimented with data transfer between two ESP32
 
 <div align="center">
   <img src="./images/UWB_2a.png" alt="Data Transfer Setup" width="50%">
-  <p><em>Figure: Data Transfer In Progress</em></p>
+  <p><em>Figure 5: Data Transfer In Progress</em></p>
 </div>
 
 ### 🚀 Speed & Performance Limitations
