@@ -29,7 +29,7 @@ The figure also highlights the Federal Communications Commission (FCC) power spe
   <p><em>Figure 1: UWB frequency spectrum coverage</em></p>
 </div>
 
-### Aim
+### 🎯 Aim
 
 We compare UWB with existing technologies like **Bluetooth (BLE)** and **GPS**, highlighting its superiority in indoor accuracy and resistance to interference.
 
