@@ -147,9 +147,10 @@ Our implementation uses the **Qorvo DW1000**, which complies with the older **IE
 
 ## 👥 Authors
 
-*   **Adedeji Babalola**
-*   **Dmitri Oikarinen**
-*   **Vali Maleki**
+*   [**Adedeji Babalola**](mailto:daygme@gmail.com)
+*   [**Dmitri Oikarinen**](mailto:oikarinendima@gmail.com)
+*   [**Vali Maleki**](mailto:malekivaly@gmail.com)
+
 
 ---
 
